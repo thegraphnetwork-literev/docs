@@ -1,0 +1,6265 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://literev.epigraphhub.org/api/backend/functions/">
+      
+      
+        <link rel="prev" href="../apps/">
+      
+      
+        <link rel="next" href="../models/">
+      
+      <link rel="icon" href="/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>API - BackEnd.functions - LiteRev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="lime">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-backendfunctions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LiteRev" class="md-header__button md-logo" aria-label="LiteRev" data-md-component="logo">
+      
+  <img src="../../../assets/images/literev.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LiteRev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API - BackEnd.functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://thegraphnetwork-literev.github.io/LiteRev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Thegraphnetwork-Literev
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LiteRev" class="md-nav__button md-logo" aria-label="LiteRev" data-md-component="logo">
+      
+  <img src="../../../assets/images/literev.png" alt="logo">
+
+    </a>
+    LiteRev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://thegraphnetwork-literev.github.io/LiteRev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Thegraphnetwork-Literev
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        LiteRev
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/admin/" class="md-nav__link">
+        API - UI_Front.admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/apps/" class="md-nav__link">
+        API - UI_Front.apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/forms/" class="md-nav__link">
+        API - UI_Front.forms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/functions/" class="md-nav__link">
+        API - UI_Front.functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/models/" class="md-nav__link">
+        API - UI_Front.models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/views/" class="md-nav__link">
+        API - UI_Front.views
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin/" class="md-nav__link">
+        API - BackEnd.admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/" class="md-nav__link">
+        API - BackEnd.apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          API - BackEnd.functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        API - BackEnd.functions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsclustering" class="md-nav__link">
+    BackEnd.functions.clustering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.clustering" class="md-nav__link">
+    clustering
+  </a>
+  
+    <nav class="md-nav" aria-label="clustering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.clustering-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.clustering.hover_with_keywords" class="md-nav__link">
+    hover_with_keywords()
+  </a>
+  
+    <nav class="md-nav" aria-label="hover_with_keywords()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.clustering.hover_with_keywords--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorsarxiv_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.arxiv_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector" class="md-nav__link">
+    arxiv_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="arxiv_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector" class="md-nav__link">
+    ArXivCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="ArXivCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_author" class="md-nav__link">
+    extract_author()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_author--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_date" class="md-nav__link">
+    extract_date()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.generate_base_query" class="md-nav__link">
+    generate_base_query()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_dict_markup_lang" class="md-nav__link">
+    get_dict_markup_lang()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_max_count" class="md-nav__link">
+    get_max_count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_max_count--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_url_response" class="md-nav__link">
+    get_url_response()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_url_response--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorsbase" class="md-nav__link">
+    BackEnd.functions.journal_collectors.base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base" class="md-nav__link">
+    base
+  </a>
+  
+    <nav class="md-nav" aria-label="base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector" class="md-nav__link">
+    BaseCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="BaseCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.extract_pdf_full_text" class="md-nav__link">
+    extract_pdf_full_text()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.generate_threads" class="md-nav__link">
+    generate_threads()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.get_articles_parallel" class="md-nav__link">
+    get_articles_parallel()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.get_search_term" class="md-nav__link">
+    get_search_term()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.separate_ymd_from_date" class="md-nav__link">
+    separate_ymd_from_date()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector" class="md-nav__link">
+    PMAndPMCCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="PMAndPMCCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_abstract" class="md-nav__link">
+    extract_abstract()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_author" class="md-nav__link">
+    extract_author()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_date" class="md-nav__link">
+    extract_date()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_doi" class="md-nav__link">
+    extract_doi()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_metadata_from_identifier" class="md-nav__link">
+    extract_metadata_from_identifier()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_title" class="md-nav__link">
+    extract_title()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_url" class="md-nav__link">
+    extract_url()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_addr_fetch" class="md-nav__link">
+    generate_addr_fetch()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_base_query" class="md-nav__link">
+    generate_base_query()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_id_list" class="md-nav__link">
+    generate_id_list()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_list_id" class="md-nav__link">
+    get_list_id()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_max_articles" class="md-nav__link">
+    get_max_articles()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_url_response" class="md-nav__link">
+    get_url_response()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.prepare_articles_parallel" class="md-nav__link">
+    prepare_articles_parallel()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector" class="md-nav__link">
+    TheXivesCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="TheXivesCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector.generate_base_query" class="md-nav__link">
+    generate_base_query()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector.get_dict_markup_lang" class="md-nav__link">
+    get_dict_markup_lang()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector.get_max_articles" class="md-nav__link">
+    get_max_articles()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector.prepare_articles_parallel" class="md-nav__link">
+    prepare_articles_parallel()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base._get_articles_parallel_wrapper" class="md-nav__link">
+    _get_articles_parallel_wrapper()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorsbiorxiv_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.biorxiv_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.biorxiv_collector" class="md-nav__link">
+    biorxiv_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="biorxiv_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.biorxiv_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.biorxiv_collector.BiorXivCollector" class="md-nav__link">
+    BiorXivCollector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorsmedrxiv_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.medrxiv_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.medrxiv_collector" class="md-nav__link">
+    medrxiv_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="medrxiv_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.medrxiv_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.medrxiv_collector.MedrXivCollector" class="md-nav__link">
+    MedrXivCollector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorspm_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.pm_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pm_collector" class="md-nav__link">
+    pm_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="pm_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pm_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pm_collector.PMCollector" class="md-nav__link">
+    PMCollector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorspmc_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.pmc_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector" class="md-nav__link">
+    pmc_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="pmc_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector" class="md-nav__link">
+    PMCCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="PMCCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_abstract" class="md-nav__link">
+    extract_abstract()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_author" class="md-nav__link">
+    extract_author()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_date" class="md-nav__link">
+    extract_date()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_doi" class="md-nav__link">
+    extract_doi()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorstypes" class="md-nav__link">
+    BackEnd.functions.journal_collectors.types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.types" class="md-nav__link">
+    types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsnlp" class="md-nav__link">
+    BackEnd.functions.nlp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp" class="md-nav__link">
+    nlp
+  </a>
+  
+    <nav class="md-nav" aria-label="nlp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp.call_openai_chatgpt" class="md-nav__link">
+    call_openai_chatgpt()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp.list_as_string" class="md-nav__link">
+    list_as_string()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp.nlp_topic_description" class="md-nav__link">
+    nlp_topic_description()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsscatter_with_hover" class="md-nav__link">
+    BackEnd.functions.scatter_with_hover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover" class="md-nav__link">
+    scatter_with_hover
+  </a>
+  
+    <nav class="md-nav" aria-label="scatter_with_hover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover.scatter_with_hover" class="md-nav__link">
+    scatter_with_hover()
+  </a>
+  
+    <nav class="md-nav" aria-label="scatter_with_hover()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover.scatter_with_hover--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover.scatter_with_hover--acknowledgment" class="md-nav__link">
+    Acknowledgment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsview_functions" class="md-nav__link">
+    BackEnd.functions.view_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions" class="md-nav__link">
+    view_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="view_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.back_process" class="md-nav__link">
+    back_process()
+  </a>
+  
+    <nav class="md-nav" aria-label="back_process()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.back_process--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.check" class="md-nav__link">
+    check()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.make_cluster" class="md-nav__link">
+    make_cluster()
+  </a>
+  
+    <nav class="md-nav" aria-label="make_cluster()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.make_cluster--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.make_preprocessing" class="md-nav__link">
+    make_preprocessing()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.preprocessing_parallel" class="md-nav__link">
+    preprocessing_parallel()
+  </a>
+  
+    <nav class="md-nav" aria-label="preprocessing_parallel()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.preprocessing_parallel--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.print_research" class="md-nav__link">
+    print_research()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.relaunch_if_fault_all" class="md-nav__link">
+    relaunch_if_fault_all()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.update_research" class="md-nav__link">
+    update_research()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsfilter_article" class="md-nav__link">
+    BackEnd.functions.filter_article
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.filter_article" class="md-nav__link">
+    filter_article
+  </a>
+  
+    <nav class="md-nav" aria-label="filter_article">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.filter_article-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.filter_article.parsing" class="md-nav__link">
+    parsing()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.filter_article.split_search_term" class="md-nav__link">
+    split_search_term()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionspdf_download" class="md-nav__link">
+    BackEnd.functions.PDF_download
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download" class="md-nav__link">
+    PDF_download
+  </a>
+  
+    <nav class="md-nav" aria-label="PDF_download">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler" class="md-nav__link">
+    PDFHandler
+  </a>
+  
+    <nav class="md-nav" aria-label="PDFHandler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.convert_pdf" class="md-nav__link">
+    convert_pdf()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.download_from_url" class="md-nav__link">
+    download_from_url()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.extract_full_text" class="md-nav__link">
+    extract_full_text()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.extract_full_text--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi" class="md-nav__link">
+    get_url_from_doi()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi--description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi--takes" class="md-nav__link">
+    Takes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.remove_char" class="md-nav__link">
+    remove_char()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.remove_char--description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.remove_char--takes" class="md-nav__link">
+    Takes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsremove_references" class="md-nav__link">
+    BackEnd.functions.Remove_references
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.Remove_references" class="md-nav__link">
+    Remove_references
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionstext_processing" class="md-nav__link">
+    BackEnd.functions.text_processing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing" class="md-nav__link">
+    text_processing
+  </a>
+  
+    <nav class="md-nav" aria-label="text_processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.create_stopwords" class="md-nav__link">
+    create_stopwords()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.lemmatization" class="md-nav__link">
+    lemmatization()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.pre_processing" class="md-nav__link">
+    pre_processing()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.remove_misspelled" class="md-nav__link">
+    remove_misspelled()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.remove_words" class="md-nav__link">
+    remove_words()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.sent_to_words" class="md-nav__link">
+    sent_to_words()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        API - BackEnd.models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views/" class="md-nav__link">
+        API - BackEnd.views
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/admin/" class="md-nav__link">
+        API - DataBase.admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/apps/" class="md-nav__link">
+        API - DataBase.apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/models/" class="md-nav__link">
+        API - DataBase.models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/views/" class="md-nav__link">
+        API - DataBase.views
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsclustering" class="md-nav__link">
+    BackEnd.functions.clustering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.clustering" class="md-nav__link">
+    clustering
+  </a>
+  
+    <nav class="md-nav" aria-label="clustering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.clustering-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.clustering.hover_with_keywords" class="md-nav__link">
+    hover_with_keywords()
+  </a>
+  
+    <nav class="md-nav" aria-label="hover_with_keywords()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.clustering.hover_with_keywords--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorsarxiv_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.arxiv_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector" class="md-nav__link">
+    arxiv_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="arxiv_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector" class="md-nav__link">
+    ArXivCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="ArXivCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_author" class="md-nav__link">
+    extract_author()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_author--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_date" class="md-nav__link">
+    extract_date()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.generate_base_query" class="md-nav__link">
+    generate_base_query()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_dict_markup_lang" class="md-nav__link">
+    get_dict_markup_lang()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_max_count" class="md-nav__link">
+    get_max_count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_max_count--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_url_response" class="md-nav__link">
+    get_url_response()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_url_response--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorsbase" class="md-nav__link">
+    BackEnd.functions.journal_collectors.base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base" class="md-nav__link">
+    base
+  </a>
+  
+    <nav class="md-nav" aria-label="base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector" class="md-nav__link">
+    BaseCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="BaseCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.extract_pdf_full_text" class="md-nav__link">
+    extract_pdf_full_text()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.generate_threads" class="md-nav__link">
+    generate_threads()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.get_articles_parallel" class="md-nav__link">
+    get_articles_parallel()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.get_search_term" class="md-nav__link">
+    get_search_term()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.BaseCollector.separate_ymd_from_date" class="md-nav__link">
+    separate_ymd_from_date()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector" class="md-nav__link">
+    PMAndPMCCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="PMAndPMCCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_abstract" class="md-nav__link">
+    extract_abstract()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_author" class="md-nav__link">
+    extract_author()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_date" class="md-nav__link">
+    extract_date()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_doi" class="md-nav__link">
+    extract_doi()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_metadata_from_identifier" class="md-nav__link">
+    extract_metadata_from_identifier()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_title" class="md-nav__link">
+    extract_title()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_url" class="md-nav__link">
+    extract_url()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_addr_fetch" class="md-nav__link">
+    generate_addr_fetch()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_base_query" class="md-nav__link">
+    generate_base_query()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_id_list" class="md-nav__link">
+    generate_id_list()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_list_id" class="md-nav__link">
+    get_list_id()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_max_articles" class="md-nav__link">
+    get_max_articles()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_url_response" class="md-nav__link">
+    get_url_response()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector.prepare_articles_parallel" class="md-nav__link">
+    prepare_articles_parallel()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector" class="md-nav__link">
+    TheXivesCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="TheXivesCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector.generate_base_query" class="md-nav__link">
+    generate_base_query()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector.get_dict_markup_lang" class="md-nav__link">
+    get_dict_markup_lang()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector.get_max_articles" class="md-nav__link">
+    get_max_articles()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base.TheXivesCollector.prepare_articles_parallel" class="md-nav__link">
+    prepare_articles_parallel()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.base._get_articles_parallel_wrapper" class="md-nav__link">
+    _get_articles_parallel_wrapper()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorsbiorxiv_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.biorxiv_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.biorxiv_collector" class="md-nav__link">
+    biorxiv_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="biorxiv_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.biorxiv_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.biorxiv_collector.BiorXivCollector" class="md-nav__link">
+    BiorXivCollector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorsmedrxiv_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.medrxiv_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.medrxiv_collector" class="md-nav__link">
+    medrxiv_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="medrxiv_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.medrxiv_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.medrxiv_collector.MedrXivCollector" class="md-nav__link">
+    MedrXivCollector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorspm_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.pm_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pm_collector" class="md-nav__link">
+    pm_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="pm_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pm_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pm_collector.PMCollector" class="md-nav__link">
+    PMCollector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorspmc_collector" class="md-nav__link">
+    BackEnd.functions.journal_collectors.pmc_collector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector" class="md-nav__link">
+    pmc_collector
+  </a>
+  
+    <nav class="md-nav" aria-label="pmc_collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector" class="md-nav__link">
+    PMCCollector
+  </a>
+  
+    <nav class="md-nav" aria-label="PMCCollector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_abstract" class="md-nav__link">
+    extract_abstract()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_author" class="md-nav__link">
+    extract_author()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_date" class="md-nav__link">
+    extract_date()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_doi" class="md-nav__link">
+    extract_doi()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsjournal_collectorstypes" class="md-nav__link">
+    BackEnd.functions.journal_collectors.types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.journal_collectors.types" class="md-nav__link">
+    types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsnlp" class="md-nav__link">
+    BackEnd.functions.nlp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp" class="md-nav__link">
+    nlp
+  </a>
+  
+    <nav class="md-nav" aria-label="nlp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp.call_openai_chatgpt" class="md-nav__link">
+    call_openai_chatgpt()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp.list_as_string" class="md-nav__link">
+    list_as_string()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.nlp.nlp_topic_description" class="md-nav__link">
+    nlp_topic_description()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsscatter_with_hover" class="md-nav__link">
+    BackEnd.functions.scatter_with_hover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover" class="md-nav__link">
+    scatter_with_hover
+  </a>
+  
+    <nav class="md-nav" aria-label="scatter_with_hover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover.scatter_with_hover" class="md-nav__link">
+    scatter_with_hover()
+  </a>
+  
+    <nav class="md-nav" aria-label="scatter_with_hover()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover.scatter_with_hover--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.scatter_with_hover.scatter_with_hover--acknowledgment" class="md-nav__link">
+    Acknowledgment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsview_functions" class="md-nav__link">
+    BackEnd.functions.view_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions" class="md-nav__link">
+    view_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="view_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.back_process" class="md-nav__link">
+    back_process()
+  </a>
+  
+    <nav class="md-nav" aria-label="back_process()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.back_process--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.check" class="md-nav__link">
+    check()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.make_cluster" class="md-nav__link">
+    make_cluster()
+  </a>
+  
+    <nav class="md-nav" aria-label="make_cluster()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.make_cluster--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.make_preprocessing" class="md-nav__link">
+    make_preprocessing()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.preprocessing_parallel" class="md-nav__link">
+    preprocessing_parallel()
+  </a>
+  
+    <nav class="md-nav" aria-label="preprocessing_parallel()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.preprocessing_parallel--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.print_research" class="md-nav__link">
+    print_research()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.relaunch_if_fault_all" class="md-nav__link">
+    relaunch_if_fault_all()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.view_functions.update_research" class="md-nav__link">
+    update_research()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsfilter_article" class="md-nav__link">
+    BackEnd.functions.filter_article
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.filter_article" class="md-nav__link">
+    filter_article
+  </a>
+  
+    <nav class="md-nav" aria-label="filter_article">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.filter_article-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.filter_article.parsing" class="md-nav__link">
+    parsing()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.filter_article.split_search_term" class="md-nav__link">
+    split_search_term()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionspdf_download" class="md-nav__link">
+    BackEnd.functions.PDF_download
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download" class="md-nav__link">
+    PDF_download
+  </a>
+  
+    <nav class="md-nav" aria-label="PDF_download">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler" class="md-nav__link">
+    PDFHandler
+  </a>
+  
+    <nav class="md-nav" aria-label="PDFHandler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.convert_pdf" class="md-nav__link">
+    convert_pdf()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.download_from_url" class="md-nav__link">
+    download_from_url()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.extract_full_text" class="md-nav__link">
+    extract_full_text()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.extract_full_text--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi" class="md-nav__link">
+    get_url_from_doi()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi--description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi--takes" class="md-nav__link">
+    Takes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.remove_char" class="md-nav__link">
+    remove_char()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.remove_char--description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.PDF_download.PDFHandler.remove_char--takes" class="md-nav__link">
+    Takes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionsremove_references" class="md-nav__link">
+    BackEnd.functions.Remove_references
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.Remove_references" class="md-nav__link">
+    Remove_references
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backendfunctionstext_processing" class="md-nav__link">
+    BackEnd.functions.text_processing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing" class="md-nav__link">
+    text_processing
+  </a>
+  
+    <nav class="md-nav" aria-label="text_processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.create_stopwords" class="md-nav__link">
+    create_stopwords()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.lemmatization" class="md-nav__link">
+    lemmatization()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.pre_processing" class="md-nav__link">
+    pre_processing()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.remove_misspelled" class="md-nav__link">
+    remove_misspelled()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.remove_words" class="md-nav__link">
+    remove_words()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#BackEnd.functions.text_processing.sent_to_words" class="md-nav__link">
+    sent_to_words()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="api-backendfunctions">API - BackEnd.functions</h1>
+<h2 id="backendfunctionsclustering">BackEnd.functions.clustering</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.clustering" class="doc doc-heading">
+            <code>clustering</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="BackEnd.functions.clustering-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.clustering.hover_with_keywords" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">hover_with_keywords</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">list_id</span><span class="p">,</span> <span class="n">embedding_2d</span><span class="p">,</span> <span class="n">best_study_clusterer</span><span class="p">,</span> <span class="n">tf_idf_sorted</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Create a cluster from research articles.</p>
+<p>Create an object database model for every
+article according to list_id, extract the x,y coordinates from
+embedding_2d and make the clusters given by best_study_clusterer,
+every cluster has label extracted from tf_idf_sorted.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>research</code></td>
+          <td>
+                <code>Research object Model database</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The research object model where is used to store
+search query, status and related data.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>list_id_final</code></td>
+          <td>
+                <code>list of str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of id_articles related with the research</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>embedding_2d</code></td>
+          <td>
+                <code>A numpy array wich reduces dimensionality to visualize</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>better the clusters</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>best_study_clusterer</code></td>
+          <td>
+                <code>optuna.<span title="optuna.study">study</span>.<span title="optuna.study.Study">Study</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>An object used to optimize parameters
+and create clusters with embedding_2d.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>tf_idf_sorted</code></td>
+          <td>
+                <code>pandas DataFrame</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Storage the tf-idf index for each word in
+articles. A dataframe with keywords
+as row index in the columns the
+article related.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <h6 id="BackEnd.functions.clustering.hover_with_keywords--notes">Notes</h6>
+<p>Create a cluster object database model for every
+article according to list_id, with research, article_id,
+pos_x, pos_y and labels</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsjournal_collectorsarxiv_collector">BackEnd.functions.journal_collectors.arxiv_collector</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.journal_collectors.arxiv_collector" class="doc doc-heading">
+            <code>arxiv_collector</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="BackEnd.functions.journal_collectors.arxiv_collector-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector" class="doc doc-heading">
+          <code>ArXivCollector</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="BackEnd.functions.journal_collectors.base.TheXivesCollector" href="#BackEnd.functions.journal_collectors.base.TheXivesCollector">TheXivesCollector</a></code></p>
+
+  
+      <p>Some methods for this class are defined at <code>base.py:TheXivesCollector</code>.
+Some of the methods for ArXivCollector overlap with the ones for medrXiv
+and biorXiv, so instead of defining them thrice we overwrite the methods
+specific for each one in their own files.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h5 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector-functions">Functions</h5>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_author" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_author</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_author--notes">Notes</h6>
+<p>Authors appear in the HTML document as:</p>
+<p class="authors">
+  <span class="has-text-black-bis has-text-weight-semibold">
+    Authors:
+  </span>
+  <a href="/search/?searchtype=author&amp;query=Author1">
+    Author 1
+  </a>,
+  <a href="/search/?searchtype=author&amp;query=Author2">
+    Author 2
+  </a>,
+  <a href="/search/?searchtype=author&amp;query=Author3">
+    Author 3
+  </a>
+</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.extract_date" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_date</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>As an example, date appears in the HTML document as:</p>
+<p class="is-size-7">
+  <span class="has-text-black-bis has-text-weight-semibold">
+    Submitted
+  </span>
+    24 March, 2019;
+  <span class="has-text-black-bis has-text-weight-semibold">
+    v1
+  </span>
+    submitted 17 August, 2018;
+  <span class="has-text-black-bis has-text-weight-semibold">
+    originally announced
+  </span>
+    August 2018.
+</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.generate_base_query" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_base_query</span><span class="p">(</span><span class="n">search_term</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generates the base query according to the search
+term, page number and articles by page.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_dict_markup_lang" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_dict_markup_lang</span><span class="p">(</span><span class="n">search_term</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">entries</span><span class="o">=</span><span class="p">[])</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a list of article IDs.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_max_count" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_max_count</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the number of articles resulting from a soupified HTML
+query.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>soup</code></td>
+          <td>
+                <code>bs4.<span title="bs4.BeautifulSoup">BeautifulSoup</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The HTML page resulting from a query soupified using
+BeautifulSoup.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>max_count</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The number of articles resulting from the query.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_max_count--notes">Notes</h6>
+<p>In the HTML document, the number of articles <code>max_count</code> appears in:</p>
+<div class="level-left">
+  <h1 class="title is-clearfix">
+    Showing `initial_from_page`&ndash;`final_from_page` of `max_count`
+    results
+  </h1>
+</div>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_url_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_url_response</span><span class="p">(</span><span class="n">query</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <h6 id="BackEnd.functions.journal_collectors.arxiv_collector.ArXivCollector.get_url_response--notes">Notes</h6>
+<p>arXiv's advanced search returns an HTML document.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsjournal_collectorsbase">BackEnd.functions.journal_collectors.base</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.journal_collectors.base" class="doc doc-heading">
+            <code>base</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="BackEnd.functions.journal_collectors.base-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.base.BaseCollector" class="doc doc-heading">
+          <code>BaseCollector</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h5 id="BackEnd.functions.journal_collectors.base.BaseCollector-functions">Functions</h5>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.BaseCollector.extract_pdf_full_text" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_pdf_full_text</span><span class="p">(</span><span class="n">article</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the full text from the PDF file of an article.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.BaseCollector.generate_threads" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_threads</span><span class="p">(</span><span class="n">search</span><span class="p">,</span> <span class="n">research</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">number_threads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Retrieve articles using parallel threads based on the provided
+search parameters.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.BaseCollector.get_articles_parallel" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_articles_parallel</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">dict_id_soup</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Fetch articles in parallel and store them in the database.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.BaseCollector.get_search_term" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_search_term</span><span class="p">(</span><span class="n">search</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Translates the search to a readable string search for the API</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.BaseCollector.separate_ymd_from_date" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">separate_ymd_from_date</span><span class="p">(</span><span class="n">date</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Separates year, month, and day as strings from the given date
+object.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector" class="doc doc-heading">
+          <code>PMAndPMCCollector</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="BackEnd.functions.journal_collectors.base.BaseCollector" href="#BackEnd.functions.journal_collectors.base.BaseCollector">BaseCollector</a></code></p>
+
+  
+      <p>This class is basically made of methods for PMCollector.
+Some of the functions overlap with the PMCCollector, so we define the
+methods for PMCollector here and overwrite the methods specific for
+PMCCollector on <code>pmc_collector.py</code>.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h5 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector-functions">Functions</h5>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_abstract" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_abstract</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the full abstract, not always available.
+       Itertext takes all text between the abstract tags, so we remove all</p>
+<p>characters and superfluous spaces.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_author" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_author</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the author names from the XML document.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_date" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_date</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the date from the XML document and returns a datetime.date
+object.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_doi" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_doi</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the DOI from the XML document.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_metadata_from_identifier" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_metadata_from_identifier</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extract metadata from the identifier input and return a dictionary
+with these data.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_title" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_title</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the title from the XML document.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.extract_url" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_url</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the URL based on the DOI.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_addr_fetch" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_addr_fetch</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generates the API fetch address for retrieving data based on the
+provided identifier.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_base_query" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_base_query</span><span class="p">(</span><span class="n">search_term</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generates the base query according to the API, database, search
+term, begin and end dates.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.generate_id_list" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_id_list</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generates a list of IDs from the XML document.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_list_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_list_id</span><span class="p">(</span><span class="n">search_term</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a list of article IDs.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_max_articles" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_max_articles</span><span class="p">(</span><span class="n">search</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the maximum number of articles for the given search query
+and date range</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.get_url_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_url_response</span><span class="p">(</span><span class="n">query</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a XML doc.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.PMAndPMCCollector.prepare_articles_parallel" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">prepare_articles_parallel</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">dict_id_soup</span><span class="o">=</span><span class="p">{})</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return True if the outer loop should keep going or False if
+it should run <code>continue</code> statement.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.base.TheXivesCollector" class="doc doc-heading">
+          <code>TheXivesCollector</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="BackEnd.functions.journal_collectors.base.BaseCollector" href="#BackEnd.functions.journal_collectors.base.BaseCollector">BaseCollector</a></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h5 id="BackEnd.functions.journal_collectors.base.TheXivesCollector-functions">Functions</h5>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.TheXivesCollector.generate_base_query" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_base_query</span><span class="p">(</span><span class="n">search_term</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generates the base query according to the API, database, search
+term, begin and end dates.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.TheXivesCollector.get_dict_markup_lang" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_dict_markup_lang</span><span class="p">(</span><span class="n">search_term</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">entries</span><span class="o">=</span><span class="p">[])</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a list of article IDs.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.TheXivesCollector.get_max_articles" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_max_articles</span><span class="p">(</span><span class="n">search</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the maximum number of articles for the given search query
+and date range.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.base.TheXivesCollector.prepare_articles_parallel" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">prepare_articles_parallel</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">dict_id_soup</span><span class="o">=</span><span class="p">{})</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return True if the outer loop should keep going or False if
+it should run <code>continue</code> statement.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+<h3 id="BackEnd.functions.journal_collectors.base-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.base._get_articles_parallel_wrapper" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">_get_articles_parallel_wrapper</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute get_articles_parallel from the given object.</p>
+<p>This is a wrapper to BaseCollector.get_articles_parallel
+that needs to be called by multiprocessing.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsjournal_collectorsbiorxiv_collector">BackEnd.functions.journal_collectors.biorxiv_collector</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.journal_collectors.biorxiv_collector" class="doc doc-heading">
+            <code>biorxiv_collector</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="BackEnd.functions.journal_collectors.biorxiv_collector-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.biorxiv_collector.BiorXivCollector" class="doc doc-heading">
+          <code>BiorXivCollector</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="BackEnd.functions.journal_collectors.base.TheXivesCollector" href="#BackEnd.functions.journal_collectors.base.TheXivesCollector">TheXivesCollector</a></code></p>
+
+  
+      <p>The methods for this class are defined at <code>base.py:TheXivesCollector</code>.
+Some of the methods for BiorXivCollector overlap with the ones for medrXiv
+and arXiv, so instead of defining them thrice we overwrite the methods
+specific for each one in their own files.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsjournal_collectorsmedrxiv_collector">BackEnd.functions.journal_collectors.medrxiv_collector</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.journal_collectors.medrxiv_collector" class="doc doc-heading">
+            <code>medrxiv_collector</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="BackEnd.functions.journal_collectors.medrxiv_collector-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.medrxiv_collector.MedrXivCollector" class="doc doc-heading">
+          <code>MedrXivCollector</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="BackEnd.functions.journal_collectors.base.TheXivesCollector" href="#BackEnd.functions.journal_collectors.base.TheXivesCollector">TheXivesCollector</a></code></p>
+
+  
+      <p>The methods for this class are defined at <code>base.py:TheXivesCollector</code>.
+Some of the methods for MedrXivCollector overlap with the ones for biorXiv
+and arXiv, so instead of defining them thrice we overwrite the methods
+specific for each one in their own files.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsjournal_collectorspm_collector">BackEnd.functions.journal_collectors.pm_collector</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.journal_collectors.pm_collector" class="doc doc-heading">
+            <code>pm_collector</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="BackEnd.functions.journal_collectors.pm_collector-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.pm_collector.PMCollector" class="doc doc-heading">
+          <code>PMCollector</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="BackEnd.functions.journal_collectors.base.PMAndPMCCollector" href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector">PMAndPMCCollector</a></code></p>
+
+  
+      <p>The methods for this class are defined at <code>base.py:PMAndPMCCollector</code>.
+Some of the methods for PMCollector overlap with the ones for PMCCollector,
+so instead of defining them twice we overwrite the methods specific for
+PMCCollector on <code>pmc_collector.py</code>.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsjournal_collectorspmc_collector">BackEnd.functions.journal_collectors.pmc_collector</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.journal_collectors.pmc_collector" class="doc doc-heading">
+            <code>pmc_collector</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="BackEnd.functions.journal_collectors.pmc_collector-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.journal_collectors.pmc_collector.PMCCollector" class="doc doc-heading">
+          <code>PMCCollector</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="BackEnd.functions.journal_collectors.base.PMAndPMCCollector" href="#BackEnd.functions.journal_collectors.base.PMAndPMCCollector">PMAndPMCCollector</a></code></p>
+
+  
+      <p>Most of the methods for this class are defined at <code>base.py:
+PMAndPMCCollector</code>. Some of the methods for PMCCollector overlap with the
+ones for PMCCollector, so instead of defining them twice we overwrite the
+methods specific for PMCCollector here.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h5 id="BackEnd.functions.journal_collectors.pmc_collector.PMCCollector-functions">Functions</h5>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_abstract" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_abstract</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the full abstract, not always available.
+       Itertext takes all text between the abstract tags, so we remove all</p>
+<p>characters and superfluous spaces.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_author" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_author</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the author names from the XML document.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_date" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_date</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the date from the XML document and returns a datetime.date
+object.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.journal_collectors.pmc_collector.PMCCollector.extract_doi" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_doi</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extracts the DOI from the XML document.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsjournal_collectorstypes">BackEnd.functions.journal_collectors.types</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.journal_collectors.types" class="doc doc-heading">
+            <code>types</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsnlp">BackEnd.functions.nlp</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.nlp" class="doc doc-heading">
+            <code>nlp</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="BackEnd.functions.nlp-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.nlp.call_openai_chatgpt" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">call_openai_chatgpt</span><span class="p">(</span><span class="n">question</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="s1">&#39;HIV, infant, pregnancy&#39;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">OPENAI_API_KEY</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Standard function to call ChatGPT through OpenAI's python package.
+More info: <a href="https://platform.openai.com/docs/guides/chat/introduction">https://platform.openai.com/docs/guides/chat/introduction</a></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.nlp.list_as_string" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">list_as_string</span><span class="p">(</span><span class="n">input_list</span><span class="p">,</span> <span class="n">glue</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Auxiliary function. Reads a list and concatenates it as a string, using
+<code>glue</code> as the character joining each element of the list.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.nlp.nlp_topic_description" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">nlp_topic_description</span><span class="p">(</span><span class="n">input_list</span><span class="p">,</span> <span class="n">api_key</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Reads keywords and returns a description according to ChatGPT.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsscatter_with_hover">BackEnd.functions.scatter_with_hover</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.scatter_with_hover" class="doc doc-heading">
+            <code>scatter_with_hover</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="BackEnd.functions.scatter_with_hover-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.scatter_with_hover.scatter_with_hover" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">scatter_with_hover</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="n">fig_width</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">fig_height</span><span class="o">=</span><span class="mi">900</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Creates a html Plot file an interactive scatter plot of <code>x</code> vs <code>y</code>
+using bokeh, with automatic tooltips showing columns from Cluters objects
+model database related with research object model database.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>research</code></td>
+          <td>
+                <code>Research object Model database</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>   The research object model where is used to store
+   search query, status and related data.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code>(<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, Path)</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Full path to where the html plot file will be stored
+   after being generated</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>fig</code></td>
+          <td>
+                <code>bokeh.<span title="bokeh.plotting">plotting</span>.<span title="bokeh.plotting.Figure">Figure</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Figure on which to plot (if not given then a new figure will be
+created)</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>name</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Bokeh series name to give to the scattered data</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>marker</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of marker to use for scatter plot</p>
+            </div>
+          </td>
+          <td>
+                <code>circle</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>fig_width</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>    with of the resulting plot.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+                <code>1800</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>fig_height</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>     height of the resulting plot.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+                <code>900</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <h6 id="BackEnd.functions.scatter_with_hover.scatter_with_hover--notes">Notes</h6>
+<p>Creates a html Plot file from Clusters objects and store in the path</p>
+<h6 id="BackEnd.functions.scatter_with_hover.scatter_with_hover--acknowledgment">Acknowledgment</h6>
+<p>Original code from Robin Wilson <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#111;&#98;&#105;&#110;&#64;&#114;&#116;&#119;&#105;&#108;&#115;&#111;&#110;&#46;&#99;&#111;&#109;">&#114;&#111;&#98;&#105;&#110;&#64;&#114;&#116;&#119;&#105;&#108;&#115;&#111;&#110;&#46;&#99;&#111;&#109;</a>
+with thanks to Max Albert for original code example</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsview_functions">BackEnd.functions.view_functions</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.view_functions" class="doc doc-heading">
+            <code>view_functions</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="BackEnd.functions.view_functions-classes">Classes</h3>
+<h3 id="BackEnd.functions.view_functions-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.view_functions.back_process" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">back_process</span><span class="p">(</span><span class="n">research</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Controls the whole process of researching from extracting
+articles, preprocess text, clustering, and plotting.
+This function allows to restart proccess that have been interrupted
+and continue to the point where it was stopped.
+When finalizes
+deletes all extra data that could be used in intemediate steps.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>research</code></td>
+          <td>
+                <code>Research object Model database</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>   The research object model where is used to store
+   search query, status and related data.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <h6 id="BackEnd.functions.view_functions.back_process--notes">Notes</h6>
+<p>Modify the research object model database</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.view_functions.check" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">check</span><span class="p">(</span><span class="n">research</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>check if the thread of the research is alive</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.view_functions.make_cluster" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">make_cluster</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">list_id</span><span class="p">,</span> <span class="n">tf_idf</span><span class="p">,</span> <span class="n">n_trials</span><span class="p">,</span> <span class="n">n_threads</span><span class="p">,</span> <span class="n">tf_idf_sorted</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Prepare from the entry args the data needed for create a cluster
+object database model use a pacmap object to optimize and reduce
+dimensionality.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>research</code></td>
+          <td>
+                <code>Research object Model database</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>   The research object model where is used to store
+   search query, status and related data.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>list_id_final</code></td>
+          <td>
+                <code>list of str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>        list of id_articles related with the research
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>tf_idf</code></td>
+          <td>
+                <code>scipy sparse matrix</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nv">Matrix</span><span class="w"> </span><span class="nv">which</span><span class="w"> </span><span class="nv">has</span><span class="w"> </span><span class="nv">tf</span><span class="o">-</span><span class="nv">idf</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">each</span><span class="w"> </span><span class="nv">relevant</span><span class="w"> </span><span class="nv">word</span>
+<span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">articles</span>.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>n_trial</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nv">Number</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">times</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">optimal</span>
+<span class="w">  </span><span class="nv">cluster</span><span class="w"> </span><span class="nv">distribution</span>.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>n_threads</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>    Number of parallel processing
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>tf_idf_sorted</code></td>
+          <td>
+                <code>pandas DataFrame</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code><span class="w">        </span><span class="nv">Storage</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">tf</span><span class="o">-</span><span class="nv">idf</span><span class="w"> </span><span class="nv">index</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">each</span><span class="w"> </span><span class="nv">word</span><span class="w"> </span><span class="nv">in</span>
+<span class="w">        </span><span class="nv">articles</span>.<span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="nv">dataframe</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">keywords</span>
+<span class="w">        </span><span class="nv">as</span><span class="w"> </span><span class="nv">row</span><span class="w"> </span><span class="nv">index</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">columns</span><span class="w"> </span><span class="nv">the</span>
+<span class="w">        </span><span class="nv">article</span><span class="w"> </span><span class="nv">related</span>.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <h6 id="BackEnd.functions.view_functions.make_cluster--notes">Notes</h6>
+<p>Create a clusters object database model and the clusters objects
+will be used to generate the clusters plot.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.view_functions.make_preprocessing" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">make_preprocessing</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">corpus</span><span class="o">=</span><span class="s1">&#39;abstract&#39;</span><span class="p">,</span> <span class="n">number_threads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Preprocesses the research data and returns the tf-idf matrix,
+sorted tf-idf matrix, list of ids and list of preprocessed text.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>research</code></td>
+          <td>
+                <code>Research object Model database</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>   The research object model where is used to store
+   search query, status and related data.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>corpus</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code> The selected corpus is used to preprocess text
+ it could be &#39;full_text&#39; pdf or &#39;abstract or &#39;both&#39;.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+                <code>&#39;abstract&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>number_thread</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>        Number of threads that will be processed in parallel.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+                <code>1</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>tf_idf</code></td>          <td>
+                <code>scipy sparse matrix</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Matrix which has tf-idf for each relevant word
+in articles.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+<td><code>tf_idf_sorted</code></td>          <td>
+                <code>pandas DataFrame</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Storage the tf-idf index for each word in
+articles. A dataframe with keywords
+as row index in the columns the
+article related.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+<td><code>list_id_final</code></td>          <td>
+                <code>list of str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>list of id_articles related with the research</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+<td><code>list_final</code></td>          <td>
+                <code>list of str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Every element of the list correspond to the extracted
+text from the article</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.view_functions.preprocessing_parallel" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">preprocessing_parallel</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">articles</span><span class="p">,</span> <span class="n">corpus</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Preprocess the text from the articles related with the research
+and creates Preprocess_text object model database for every word
+preproccessed and a  Number_preprocess model database as a flag to inicate
+that the research has processed text. This method will be parallelized</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>research</code></td>
+          <td>
+                <code>Research object Model database</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>   The research object model where is used to store
+   search query, status and related data.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>articles</code></td>
+          <td>
+                <code>(<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<span title="DataBase.models.Article">Article</span>], queryset)</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>   List of articles related with the research
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>corpus</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code> The selected corpus is used to preprocess text
+ it could be &#39;full_text&#39; pdf or &#39;abstract or &#39;both&#39;.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <h6 id="BackEnd.functions.view_functions.preprocessing_parallel--notes">Notes</h6>
+<p>Create Preprocess_text objects model database for every word
+preproccessed and Number_preprocess objects model database as a flag
+to indicate that the research has processed text.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.view_functions.print_research" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">print_research</span><span class="p">(</span><span class="n">log_text</span><span class="p">,</span> <span class="n">research_id</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Print a log message in the research logfile.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.view_functions.relaunch_if_fault_all" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">relaunch_if_fault_all</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Check if there is a research who is running but there is no more thread
+alive.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.view_functions.update_research" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_research</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This is a infinity loop who every 1 month, restart all research
+who is finished. But, between each restart, give some time
+so the host doesn't freeze</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsfilter_article">BackEnd.functions.filter_article</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.filter_article" class="doc doc-heading">
+            <code>filter_article</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="BackEnd.functions.filter_article-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.filter_article.parsing" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parsing</span><span class="p">(</span><span class="n">list_term</span><span class="p">,</span> <span class="n">dict_keyword</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>for each keywords, it has a list of number.
+Output: a list of number who correspond of the parsing's
+result
+This method works in reccurance call. It returns
+the result of logical calcul between
+the first term and the rest.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.filter_article.split_search_term" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">split_search_term</span><span class="p">(</span><span class="n">search_term</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Take the search term and return a list of each element
+( and, word, parenthesis, etc) in order
+and dictionary where the key is a keyword and
+the value is a list. It will fill with id of article</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionspdf_download">BackEnd.functions.PDF_download</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.PDF_download" class="doc doc-heading">
+            <code>PDF_download</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h3 id="BackEnd.functions.PDF_download-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="BackEnd.functions.PDF_download.PDFHandler" class="doc doc-heading">
+          <code>PDFHandler</code>
+
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h5 id="BackEnd.functions.PDF_download.PDFHandler-functions">Functions</h5>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.PDF_download.PDFHandler.convert_pdf" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">convert_pdf</span><span class="p">(</span><span class="n">path_file</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Converts PDF to text to do text processing.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path_file</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>    path to the pdf file.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>text</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>the text conversion of the pdf</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.PDF_download.PDFHandler.download_from_url" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_from_url</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Downloads a PDF from a direct URL.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>article</code></td>
+          <td>
+                <code>Article object Model</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>An object wich has in its attribs
+The URL to the pdf file.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>filename</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">downloaded</span><span class="w"> </span><span class="n">file</span><span class="o">.</span>
+<span class="n">it</span><span class="w"> </span><span class="n">includes</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">full</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">name</span><span class="o">.</span>
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>status</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Returns True if the PDF was saved successfully,
+False otherwise.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.PDF_download.PDFHandler.extract_full_text" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_full_text</span><span class="p">(</span><span class="n">article</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Downloads the corresponding PDF from the article's URL
+and extracts the full text. Returns the full text or an empty string
+if there was a problem. If DOWLOAD_PDF_ARTICLE flag is set to False,
+just return "".</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>article</code></td>
+          <td>
+                <code>Article object Model</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>the article object.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>full_text</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>the text conversion of the pdf</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <h6 id="BackEnd.functions.PDF_download.PDFHandler.extract_full_text--notes">Notes</h6>
+<p>If DOWLOAD_PDF_ARTICLE flag is set to False,
+just return "".</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_url_from_doi</span><span class="p">(</span><span class="n">doi</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <h6 id="BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi--description">Description</h6>
+<p>This function gets a direct URL to a pdf based on DOI</p>
+<h6 id="BackEnd.functions.PDF_download.PDFHandler.get_url_from_doi--takes">Takes</h6>
+<p>DOI (string): URL to the PDF file</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>url_pdf</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> or None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>URL to the PDF file.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h6 id="BackEnd.functions.PDF_download.PDFHandler.remove_char" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">remove_char</span><span class="p">(</span><span class="n">string</span><span class="p">)</span></code>
+
+</h6>
+
+
+  <div class="doc doc-contents ">
+  
+      <h6 id="BackEnd.functions.PDF_download.PDFHandler.remove_char--description">Description</h6>
+<p>This function removes unwanted characters</p>
+<h6 id="BackEnd.functions.PDF_download.PDFHandler.remove_char--takes">Takes</h6>
+<p>string (string)</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionsremove_references">BackEnd.functions.Remove_references</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.Remove_references" class="doc doc-heading">
+            <code>Remove_references</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="backendfunctionstext_processing">BackEnd.functions.text_processing</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="BackEnd.functions.text_processing" class="doc doc-heading">
+            <code>text_processing</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="BackEnd.functions.text_processing-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.text_processing.create_stopwords" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">create_stopwords</span><span class="p">()</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Create a new set of stopwords from a file.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>stopwords</code></td>          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Set" href="https://docs.python.org/3/library/typing.html#typing.Set">Set</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A set of stopwords.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.text_processing.lemmatization" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">lemmatization</span><span class="p">(</span><span class="n">list_words</span><span class="p">,</span> <span class="n">allowed_postags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NOUN&#39;</span><span class="p">,</span> <span class="s1">&#39;ADJ&#39;</span><span class="p">,</span> <span class="s1">&#39;VERB&#39;</span><span class="p">,</span> <span class="s1">&#39;ADV&#39;</span><span class="p">])</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Lemmatize a list of words.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>list_words</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>  A list of words.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>allowed_postags</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>  A list of allowed POS tags.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+                <code>[&#39;NOUN&#39;, &#39;ADJ&#39;, &#39;VERB&#39;, &#39;ADV&#39;]</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>list_lemmatized</code></td>          <td>
+                <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of lemmatized words.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.text_processing.pre_processing" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pre_processing</span><span class="p">(</span><span class="n">df_to_list</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Preprocess a list of strings by removing special characters and digits.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>df_to_list</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>  A list of strings.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>list_preprocessing</code></td>          <td>
+                <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of preprocessed strings.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.text_processing.remove_misspelled" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">remove_misspelled</span><span class="p">(</span><span class="n">list_one_two</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Receive a list of words and for each word
+Check if the word is in the dictionary_compact.json file,
+If the word is not in the dictionary, return the corrected word,
+Otherwise, return the original word</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.text_processing.remove_words" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">remove_words</span><span class="p">(</span><span class="n">list_lemmatized</span><span class="p">,</span> <span class="n">list_stopwords</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Receive a list of words and a list of stopwords,
+Remove the stopwords from the list of words,
+Return a list with the remaining words</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="BackEnd.functions.text_processing.sent_to_words" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">sent_to_words</span><span class="p">(</span><span class="n">list_languages</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Receive a list of sentences and for each sentence
+Convert into a list of lowercase tokens,
+ignoring tokens that are too short or too long
+(remove accents as well).
+For each sentence return a list with the processed
+words</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 LiteRev Team
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

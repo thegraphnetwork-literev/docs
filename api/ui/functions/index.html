@@ -1,0 +1,1688 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://literev.epigraphhub.org/api/ui/functions/">
+      
+      
+        <link rel="prev" href="../forms/">
+      
+      
+        <link rel="next" href="../models/">
+      
+      <link rel="icon" href="/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>API - UI_Front.functions - LiteRev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="lime">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-ui_frontfunctions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LiteRev" class="md-header__button md-logo" aria-label="LiteRev" data-md-component="logo">
+      
+  <img src="../../../assets/images/literev.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LiteRev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API - UI_Front.functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://thegraphnetwork-literev.github.io/LiteRev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Thegraphnetwork-Literev
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LiteRev" class="md-nav__button md-logo" aria-label="LiteRev" data-md-component="logo">
+      
+  <img src="../../../assets/images/literev.png" alt="logo">
+
+    </a>
+    LiteRev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://thegraphnetwork-literev.github.io/LiteRev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Thegraphnetwork-Literev
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        LiteRev
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin/" class="md-nav__link">
+        API - UI_Front.admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/" class="md-nav__link">
+        API - UI_Front.apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forms/" class="md-nav__link">
+        API - UI_Front.forms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          API - UI_Front.functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        API - UI_Front.functions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionsselect_functions" class="md-nav__link">
+    UI_Front.functions.select_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions" class="md-nav__link">
+    select_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="select_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions.filter_recover_data" class="md-nav__link">
+    filter_recover_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions.filters_manager" class="md-nav__link">
+    filters_manager()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions.get_articles_filtered" class="md-nav__link">
+    get_articles_filtered()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionstablechoice_functions" class="md-nav__link">
+    UI_Front.functions.tablechoice_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions" class="md-nav__link">
+    tablechoice_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="tablechoice_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.all_display_table_choice" class="md-nav__link">
+    all_display_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.download_finalcsv" class="md-nav__link">
+    download_finalcsv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.reset_table_choice" class="md-nav__link">
+    reset_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.update_article_is_check_table_choice" class="md-nav__link">
+    update_article_is_check_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.update_article_to_display_table_choice" class="md-nav__link">
+    update_article_to_display_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.update_neighbour_table_choice" class="md-nav__link">
+    update_neighbour_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.update_new_table_choice" class="md-nav__link">
+    update_new_table_choice()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionsuser_page_functions" class="md-nav__link">
+    UI_Front.functions.user_page_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.user_page_functions" class="md-nav__link">
+    user_page_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionsutils_functions" class="md-nav__link">
+    UI_Front.functions.utils_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.utils_functions" class="md-nav__link">
+    utils_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="utils_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.utils_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.utils_functions.neighbour_article" class="md-nav__link">
+    neighbour_article()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionswelcome_functions" class="md-nav__link">
+    UI_Front.functions.welcome_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.welcome_functions" class="md-nav__link">
+    welcome_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="welcome_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.welcome_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.welcome_functions.sort_historical" class="md-nav__link">
+    sort_historical()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.welcome_functions.word_list" class="md-nav__link">
+    word_list()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        API - UI_Front.models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views/" class="md-nav__link">
+        API - UI_Front.views
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/admin/" class="md-nav__link">
+        API - BackEnd.admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/apps/" class="md-nav__link">
+        API - BackEnd.apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/functions/" class="md-nav__link">
+        API - BackEnd.functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/models/" class="md-nav__link">
+        API - BackEnd.models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/views/" class="md-nav__link">
+        API - BackEnd.views
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/admin/" class="md-nav__link">
+        API - DataBase.admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/apps/" class="md-nav__link">
+        API - DataBase.apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/models/" class="md-nav__link">
+        API - DataBase.models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/views/" class="md-nav__link">
+        API - DataBase.views
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionsselect_functions" class="md-nav__link">
+    UI_Front.functions.select_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions" class="md-nav__link">
+    select_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="select_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions.filter_recover_data" class="md-nav__link">
+    filter_recover_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions.filters_manager" class="md-nav__link">
+    filters_manager()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.select_functions.get_articles_filtered" class="md-nav__link">
+    get_articles_filtered()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionstablechoice_functions" class="md-nav__link">
+    UI_Front.functions.tablechoice_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions" class="md-nav__link">
+    tablechoice_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="tablechoice_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.all_display_table_choice" class="md-nav__link">
+    all_display_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.download_finalcsv" class="md-nav__link">
+    download_finalcsv()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.reset_table_choice" class="md-nav__link">
+    reset_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.update_article_is_check_table_choice" class="md-nav__link">
+    update_article_is_check_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.update_article_to_display_table_choice" class="md-nav__link">
+    update_article_to_display_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.update_neighbour_table_choice" class="md-nav__link">
+    update_neighbour_table_choice()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.tablechoice_functions.update_new_table_choice" class="md-nav__link">
+    update_new_table_choice()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionsuser_page_functions" class="md-nav__link">
+    UI_Front.functions.user_page_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.user_page_functions" class="md-nav__link">
+    user_page_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionsutils_functions" class="md-nav__link">
+    UI_Front.functions.utils_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.utils_functions" class="md-nav__link">
+    utils_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="utils_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.utils_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.utils_functions.neighbour_article" class="md-nav__link">
+    neighbour_article()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_frontfunctionswelcome_functions" class="md-nav__link">
+    UI_Front.functions.welcome_functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UI_Front.functions.welcome_functions" class="md-nav__link">
+    welcome_functions
+  </a>
+  
+    <nav class="md-nav" aria-label="welcome_functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.welcome_functions-functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.welcome_functions.sort_historical" class="md-nav__link">
+    sort_historical()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#UI_Front.functions.welcome_functions.word_list" class="md-nav__link">
+    word_list()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="api-ui_frontfunctions">API - UI_Front.functions</h1>
+<h2 id="ui_frontfunctionsselect_functions">UI_Front.functions.select_functions</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="UI_Front.functions.select_functions" class="doc doc-heading">
+            <code>select_functions</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="UI_Front.functions.select_functions-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.select_functions.filter_recover_data" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">filter_recover_data</span><span class="p">(</span><span class="n">post_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>If cancel and return to the page of selection with all filter.
+We recuperate data so can write them in the html page
+input : dictionnary with key in format= "filter_X_Y" X is
+the numero of the filter and Y the numero of element in the filter
+    value is a string. The format of each string is
+    "Type:data_type;name_value:value;"
+    for data_type = topic -&gt; "Type:topic;topic_name:name_of_topic"
+    name of topic is in format [A-Za-z0-9_,-\s]+ .
+    for data_type = author -&gt; "Type:author;name:name;"
+    name format is [A-Za-z0-9-\s_]. It can be without name
+    for data_type = keyword -&gt; "Type:keyword;keyword:value;"
+    the value can be [A-Za-z0-9-\s_]
+    for data_type = neighbour -&gt; "Type:neighbour;DOI:value;</p>
+<p>output :
+    dictionnary of dictionnary. each dictionnary is a filter block
+    and have the keys:topic,author,keyword and doi. each of them is
+    a list of value</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.select_functions.filters_manager" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">filters_manager</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">post_data</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>We first give the research object.
+We secondly give the dictionnary with post data and return a dictionnary:
+input:
+    dictionnary with key in format= "filter_X_Y" X is
+    the numero of the filter and Y the numero of the element in the
+    filter.
+    value is a string. The format of each string is
+    "Type:data_type;name_value:value;"
+    for data_type = topic -&gt; "Type:topic;topic_name:name_of_topic;"
+    name of topic is in format [A-Za-z0-9_,-\s]+ .
+    for data_type = author -&gt; "Type:author;name:name;"
+    name format is [A-Za-z0-9-\s_]. It can be without name
+    for data_type = keyword -&gt; "Type:keyword;keyword:value;"
+    the value can be [A-Za-z0-9-\s_]
+    for data_type = neighbour -&gt; "Type:neighbour;DOI:value;"</p>
+<p>output:
+    dictionnary in this format
+    dict["filter_[0-9]+"] . The key represent the name of a
+    filter and the value is a dictionnary in this format:
+        dict["type of value"] = list of these value.
+        type of value = 'topic', value = ["topic1","topic2",etc...],
+        topic name
+        type of value = 'author', value = a list of the Author objects
+        that name match with last_name and/or first_name match
+        type of value = 'keyword', value = ["key1","key2",etc...]
+        type of value = 'neighbour'
+        value = [article_object that has the same doi in input]</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.select_functions.get_articles_filtered" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_articles_filtered</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">filters</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The function take the research id and filters, build a list of article who
+match the filters and return the list of the article id. If choose id
+instead of the object,this is to save it in user session as a list of
+integer.</p>
+<p>input: dictionnary in this format
+    dict["filter_[0-9]+"] . The key represent the name of a filter
+    and the value is a dictionnary in this format:
+        dict["type of value"] = list of these value.
+        type of value = 'topic', value = ["topic1","topic2",etc...],
+            topic name
+        type of value = 'author', value = a list of the Author objects
+        that last_name and/or first_name match
+        type of value = 'keyword', value = ["key1","key2",etc...]
+        type of value = 'neighbour'
+        value = [article_object that has the same doi in input]</p>
+<p>output: list of objects of Article</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="ui_frontfunctionstablechoice_functions">UI_Front.functions.tablechoice_functions</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="UI_Front.functions.tablechoice_functions" class="doc doc-heading">
+            <code>tablechoice_functions</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="UI_Front.functions.tablechoice_functions-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.tablechoice_functions.all_display_table_choice" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">all_display_table_choice</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">research</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Reset all article so can display all article</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.tablechoice_functions.download_finalcsv" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_finalcsv</span><span class="p">(</span><span class="n">research</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a csv file as attachment.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>research</code></td>
+          <td>
+                <code>Research object Model database</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <div class="codehilite"><pre><span></span><code>   The research object model where is used to store
+   search query, status and related data.
+</code></pre></div>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>user</code></td>
+          <td>
+                <code><span title="UI_Front.models.CustomUser">User</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A User object related with the data of the user.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>response</code></td>          <td>
+                <code><span title="django.http.response.HttpResponse">HttpResponse</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A csv file as attachment.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.tablechoice_functions.reset_table_choice" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">reset_table_choice</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">research</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>To reset, delete all row who have been added
+and put to_display to true</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.tablechoice_functions.update_article_is_check_table_choice" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_article_is_check_table_choice</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">research</span><span class="p">,</span> <span class="n">list_id</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The function take a list of id object of TableChoice row and user.
+All row who is in list_id,
+the boolean 'is_check' will be put to True. The function take user
+id by security. We check if all id
+in 'list_id' is owned by user because, the list of id come
+from the front-end by the user</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.tablechoice_functions.update_article_to_display_table_choice" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_article_to_display_table_choice</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">research</span><span class="p">,</span> <span class="n">list_id</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The function take a list of id object of TableChoice row and user.
+All row who is not in list_id,
+the boolean 'to_display' will be put to False. The function take
+user id by security. We check if all id
+in 'list_id' is owned by user because, the list of id come from
+the front-end by the user</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.tablechoice_functions.update_neighbour_table_choice" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_neighbour_table_choice</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">research</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>With an initial list of article from all row who are to_display
+True, add the nearest neighbour of these article in table choice.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.tablechoice_functions.update_new_table_choice" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_new_table_choice</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">research</span><span class="p">,</span> <span class="n">article_id_list</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>When user make a new research filtering, the ancients
+are deleted and the new are written</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="ui_frontfunctionsuser_page_functions">UI_Front.functions.user_page_functions</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="UI_Front.functions.user_page_functions" class="doc doc-heading">
+            <code>user_page_functions</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  </div>
+
+</div><h2 id="ui_frontfunctionsutils_functions">UI_Front.functions.utils_functions</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="UI_Front.functions.utils_functions" class="doc doc-heading">
+            <code>utils_functions</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="UI_Front.functions.utils_functions-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.utils_functions.neighbour_article" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">neighbour_article</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">research</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a list of article but there isn't the center article in the list.</p>
+<p>The function take an article, a research and process with cluster object,
+the nearest neighbor. By default, take the 5 nearest.
+by iteration, search around the article +-100 and if doesn't
+have enough, the same but with +-200 around. We make max +-1000.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="ui_frontfunctionswelcome_functions">UI_Front.functions.welcome_functions</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="UI_Front.functions.welcome_functions" class="doc doc-heading">
+            <code>welcome_functions</code>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="UI_Front.functions.welcome_functions-functions">Functions</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.welcome_functions.sort_historical" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">sort_historical</span><span class="p">(</span><span class="n">research_dict</span><span class="p">,</span> <span class="n">sort_type</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Take a dictionary key: id of research, value:
+list of Keywords objects. Return a list sorted
+in this format: [(id research,[string keywords])].
+For the sort type, it has 'pertinence',
+'article+' and 'article-'</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="UI_Front.functions.welcome_functions.word_list" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">word_list</span><span class="p">(</span><span class="n">string_to_parse</span><span class="p">)</span></code>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>From a search string that was control if there
+is bad characters,
+extract all keywords and return them</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 LiteRev Team
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
